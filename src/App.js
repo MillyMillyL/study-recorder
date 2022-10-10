@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Logs from "./Components/Logs/Logs";
+import LogsForm from "./Components/LogsForm/LogsForm";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [logsData, setLogsData] = useState([]);
+
+  const saveLogHandler = (newLog) => {
+    newLog.id = Date.now() + "";
+    setLogsData([newLog, ...logsData]);
+  };
+
+  const deleteLogItem = (id) => {
+    const newLogsData = logsData.filter((log) => log.id !== id);
+    setLogsData(newLogsData);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <LogsForm onSaveLog={saveLogHandler} />
+      <Logs logsData={logsData} deleteLogItem={deleteLogItem} />
     </div>
   );
 }

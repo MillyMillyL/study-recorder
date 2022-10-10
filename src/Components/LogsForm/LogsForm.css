@@ -1,0 +1,45 @@
+.logs-form {
+  background-color: #eae2b7;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.form-item {
+  /* background-color: #bfa; */
+  height: 2rem;
+  line-height: 2rem;
+  display: flex;
+  flex-flow: row;
+  margin: 1rem 0;
+  /* align-items: center; */
+}
+
+.form-item input {
+  flex: auto;
+}
+
+.form-item label {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.form-btn {
+  text-align: center;
+}
+
+.form-btn button {
+  width: 30%;
+  height: 2.5rem;
+  background-color: #fcbf49;
+  color: #d62828;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  border: none;
+  transition: 0.5s;
+}
+
+.form-btn button:hover {
+  background-color: #194b49;
+  color: white;
+}
